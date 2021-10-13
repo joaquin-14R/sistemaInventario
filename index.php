@@ -42,19 +42,19 @@ $usuario = $_SESSION['usuario'];
 				<div class="position-sticky pt-3">
 					<ul class="nav flex-column">
 						<li class="nav-item">
-							<a class="nav-link active" aria-current="page" href="#">
+							<a class="nav-link active" aria-current="page" href="index.php">
 								<i data-feather="home"></i>
 								INICIO
 							</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="#">
+							<a class="nav-link" href="index.php">
 								<i data-feather="shopping-bag"></i>
 								Inventario
 							</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="#">
+							<a class="nav-link" href="registrar.php">
 								<i data-feather="file-text"></i>
 								Registrar producto
 							</a>
@@ -86,6 +86,27 @@ $usuario = $_SESSION['usuario'];
 					</ul>
 				</div>
 			</nav>
+
+			<main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+				<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+					<h1 class="h2">Inventario</h1>
+				</div>
+
+				<div class="table-responsive">
+					<table class="table table-striped table-sm">
+						<thead>
+							<tr>
+								<th scope="col">ID</th>
+								<th scope="col">Descripción del producto</th>
+								<th scope="col"> Precio</th>
+								<th scope="col">Existencia</th>
+								<th scope="col">F. Registro</th>
+								<th scope="col">F. Caducidad</th>
+							</tr>
+						</thead>
+					</table>
+				</div>
+			</main>
 		</div>
 	</div>
 	<!-- choose one -->
