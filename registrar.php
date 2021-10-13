@@ -89,22 +89,45 @@ $usuario = $_SESSION['usuario'];
 
 			<main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
 				<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-					<h1 class="h2">Inventario</h1>
+					<h1 class="h2">Nuevo Articulo</h1>
 				</div>
 
-				<div class="table-responsive">
-					<table class="table table-striped table-sm">
-						<thead>
-							<tr>
-								<th scope="col">ID</th>
-								<th scope="col">Descripción del producto</th>
-								<th scope="col">Precio</th>
-								<th scope="col">Existencia</th>
-								<th scope="col">F. Registro</th>
-								<th scope="col">F. Caducidad</th>
-							</tr>
-						</thead>
-					</table>
+				<div class="container-fluid">
+					<div class="container-sm">
+						
+						<form class="row g-3" method="post" action="" enctype= "multipart/form-data">
+							<div class="col-md-12">
+								<label for="inputproducto" class="form-label">Descripción del producto</label>
+								<input type="text" class="form-control" id="inputproducto" placeholder="Descripción" required name="producto">
+							</div>
+							
+							<div class="col-md-6">
+								<label for="inputprecio" class="form-label">Precio</label>
+								<input type="number" class="form-control" id="inputprecio" placeholder="$ Precio" required name="precio">
+							</div>
+							<div class="col-md-6">
+								<label for="inputcantidad" class="form-label">Cantidad</label>
+								<input type="number" class="form-control" id="inputcantidad" placeholder="# Unidades" required name="cantidad">
+							</div>
+							<div class="col-md-6">
+								<label for="inputfregistro" class="form-label">Registro</label>
+								<input type="text" class="form-control" id="inputfregistro" placeholder="Fecha registro" name="fechar">
+							</div>
+							<div class="col-md-6">
+								<label for="inputfcaducidad" class="form-label">Caducidad</label>
+								<input type="text" class="form-control" id="inputfcaducidad" placeholder="Fecha caducidad" name="fechac">
+							</div>
+							
+							<div class="col-12">
+
+								<input type="hidden"  class="form-control-file" id="idTT" name="idTTT">
+							</div>
+							<div class="col-12">
+								<br>
+								<button type="submit" class="btn btn-primary">Registrar</button>
+							</div>
+						</form>
+					</div>
 				</div>
 			</main>
 		</div>
