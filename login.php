@@ -18,7 +18,7 @@
 
                 $_SESSION['idusuario'] = $row['id'];
                 $_SESSION['usuario'] = $row['username'];
-                  header("Location: index.html");
+                  header("Location: index.php");
             }else{
                 $error ="Contraseña incorrecta";
                 include_once 'login.php';

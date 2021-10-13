@@ -1,3 +1,14 @@
+<?php
+session_start();
+
+if(!isset($_SESSION['idusuario'])){
+	header("Location: login.php");
+}
+
+$usuario = $_SESSION['usuario'];
+
+?>
+
 <!DOCTYPE html>
 <html lang="es_mx">
 <head>
@@ -21,7 +32,7 @@
 		
 		<div class="navbar-nav">
 			<div class="nav-item text-nowrap">
-				<a class="nav-link px-3" href="#">Cerrar Sesión</a>
+				<a class="nav-link px-3" href="#"><i data-feather="user"></i><?php echo $usuario; ?><i data-feather="log-out"></i></a>
 			</div>
 		</div>
 	</header>
