@@ -111,11 +111,11 @@ $usuario = $_SESSION['usuario'];
 							</div>
 							<div class="col-md-6">
 								<label for="inputfregistro" class="form-label">Registro</label>
-								<input type="text" class="form-control" id="inputfregistro" placeholder="Fecha registro" name="fechar">
+								<input type="date" class="form-control" id="inputfregistro" placeholder="Fecha registro" name="fechar">
 							</div>
 							<div class="col-md-6">
 								<label for="inputfcaducidad" class="form-label">Caducidad</label>
-								<input type="text" class="form-control" id="inputfcaducidad" placeholder="Fecha caducidad" name="fechac">
+								<input type="date" class="form-control" id="inputfcaducidad" placeholder="Fecha caducidad" name="fechac">
 							</div>
 							
 							<div class="col-12">
