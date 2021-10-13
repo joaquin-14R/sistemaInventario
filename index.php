@@ -98,10 +98,11 @@ $usuario = $_SESSION['usuario'];
 							<tr>
 								<th scope="col">ID</th>
 								<th scope="col">Descripción del producto</th>
-								<th scope="col"> Precio</th>
+								<th scope="col">Precio</th>
 								<th scope="col">Existencia</th>
 								<th scope="col">F. Registro</th>
 								<th scope="col">F. Caducidad</th>
+								<th scope="col">Folio</th>
 							</tr>
 						</thead>
 					</table>
