@@ -9,6 +9,13 @@ $usuario = $_SESSION['usuario'];
 
 ?>
 
+<?php
+	include "conexion.php";
+    $mysqli = conectar();
+    $sql = "SELECT id, descripcion, precio, cantidad, fregistro, fcaducidad FROM productos";    
+    $resultado = mysqli_query($mysqli, $sql);
+?>
+
 <!DOCTYPE html>
 <html lang="es_mx">
 <head>
@@ -104,6 +111,24 @@ $usuario = $_SESSION['usuario'];
 								<th scope="col">F. Caducidad</th>
 							</tr>
 						</thead>
+						<tbody>
+							<?php
+								while($datos = mysqli_fetch_array($resultado))
+                                {
+							?>
+							<tr>
+								<th scope="row"><?php echo $datos['id']; ?></th>
+								<td><?php echo $datos['descripcion']; ?></td>
+								<td><?php echo $datos['precio']; ?></td>
+								<td><?php echo $datos['cantidad']; ?></td>
+								<td><?php echo $datos['fregistro']; ?></td>
+								<td><?php echo $datos['fcaducidad']; ?></td>
+							</tr>
+							<?php 
+								}
+								mysqli_close($mysqli);
+							?>
+						</tbody>
 					</table>
 				</div>
 			</main>
