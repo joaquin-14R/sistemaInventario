@@ -67,7 +67,7 @@ $usuario = $_SESSION['usuario'];
 							</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="#">
+							<a class="nav-link" href="actualizar.php">
 								<i data-feather="edit-2"></i>
 								Actualizar Inventario
 							</a>
