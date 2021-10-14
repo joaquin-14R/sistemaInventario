@@ -95,7 +95,7 @@ $usuario = $_SESSION['usuario'];
 				<div class="container-fluid">
 					<div class="container-sm">
 						
-						<form class="row g-3" method="post" action="" enctype= "multipart/form-data">
+						<form class="row g-3" method="post" action="validarRegistro.php" enctype= "multipart/form-data">
 							<div class="col-md-12">
 								<label for="inputproducto" class="form-label">Descripción del producto</label>
 								<input type="text" class="form-control" id="inputproducto" placeholder="Descripción" required name="producto">
