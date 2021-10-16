@@ -29,6 +29,7 @@ $resultado = mysqli_query($mysqli, $sql);
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+
 </head>
 <body>
 	<header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
@@ -67,7 +68,7 @@ $resultado = mysqli_query($mysqli, $sql);
 							</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="#">
+							<a class="nav-link" href="actualizar.php">
 								<i data-feather="edit-2"></i>
 								Actualizar Inventario
 							</a>
@@ -98,6 +99,16 @@ $resultado = mysqli_query($mysqli, $sql);
 				<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
 					<h1 class="h2">Actualizar Inventario</h1>
 				</div>
+				<div id="mensaje">
+					
+				</div>
+
+				<div class="container-fluid" >
+					<div class="container-sm" id="formulario">
+						
+						
+					</div>
+				</div>
 
 				<div class="table-responsive">
 					<table class="table table-striped table-sm">
@@ -116,8 +127,9 @@ $resultado = mysqli_query($mysqli, $sql);
 							<?php
 							while($datos = mysqli_fetch_array($resultado))
 							{
+								$var = $datos[0]."||".$datos[1]."||".$datos[2]."||".$datos[3]."||".$datos[4]."||".$datos[5];
 								?>
-								<tr>
+								<tr id="<?php echo $datos['id']; ?>">
 									<th scope="row"><?php echo $datos['id']; ?></th>
 									<td><?php echo $datos['descripcion']; ?></td>
 									<td><?php echo $datos['precio']; ?></td>
@@ -126,10 +138,10 @@ $resultado = mysqli_query($mysqli, $sql);
 									<td><?php echo $datos['fcaducidad']; ?></td>
 									<td>
 										<div class="d-grid gap-2 d-md-block">
-											<button type="button" class="btn btn-dark btn-sm"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pen" viewBox="0 0 16 16">
+											<button id="<?php echo $datos['id']; ?>e" type="button" class="btn btn-dark btn-sm" onclick="generarCampos('<?php echo $var; ?>');"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pen" viewBox="0 0 16 16">
 												<path d="m13.498.795.149-.149a1.207 1.207 0 1 1 1.707 1.708l-.149.148a1.5 1.5 0 0 1-.059 2.059L4.854 14.854a.5.5 0 0 1-.233.131l-4 1a.5.5 0 0 1-.606-.606l1-4a.5.5 0 0 1 .131-.232l9.642-9.642a.5.5 0 0 0-.642.056L6.854 4.854a.5.5 0 1 1-.708-.708L9.44.854A1.5 1.5 0 0 1 11.5.796a1.5 1.5 0 0 1 1.998-.001zm-.644.766a.5.5 0 0 0-.707 0L1.95 11.756l-.764 3.057 3.057-.764L14.44 3.854a.5.5 0 0 0 0-.708l-1.585-1.585z"/>
 											</svg></button>
-											<button type="button" class="btn btn-dark btn-sm"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
+											<button id="<?php echo $datos['id']; ?>d" type="button" class="btn btn-dark btn-sm"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
 												<path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
 												<path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/>
 											</svg></button> 
@@ -147,7 +159,9 @@ $resultado = mysqli_query($mysqli, $sql);
 		</div>
 	</div>
 	<!-- choose one -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 	<script src="https://unpkg.com/feather-icons"></script>
+	<script type="text/javascript" src="js/funciones.js"></script>
 	<script>
 		feather.replace()
 	</script>
