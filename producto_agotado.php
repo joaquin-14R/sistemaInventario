@@ -12,7 +12,7 @@ $usuario = $_SESSION['usuario'];
 <?php
 	include "conexion.php";
     $mysqli = conectar();
-    $sql = "SELECT id, descripcion, precio, cantidad, fregistro, fcaducidad FROM productos";    
+    $sql = "SELECT id, descripcion, precio, cantidad, fregistro, fcaducidad FROM productos where cantidad < 1";   // se modifico el query para poder visualizar una tabla para los productos agotados 
     $resultado = mysqli_query($mysqli, $sql);
 ?>
 
@@ -79,7 +79,7 @@ $usuario = $_SESSION['usuario'];
 					</h6>
 					<ul class="nav flex-column mb-2">
 						<li class="nav-item">
-							<a class="nav-link" href="producto_agotado.php">
+							<a class="nav-link" href="#">
 								<span data-feather="trash-2"></span>
 								Productos Agotados
 							</a>
@@ -100,7 +100,8 @@ $usuario = $_SESSION['usuario'];
 				</div>
 
 				<div class="table-responsive">
-					<table class="table table-striped table-sm">
+                <input type="button" onclick="tableToExcel('table', 'Reporte')" value="Reporte de Excel">
+					<table id="table" class="table table-striped table-sm"> <!-- asignamos un id a la tabla para poder generar el reporte y tomar como referencia la tabla para el reporte -->
 						<thead>
 							<tr>
 								<th scope="col">ID</th>
@@ -136,6 +137,7 @@ $usuario = $_SESSION['usuario'];
 	</div>
 	<!-- choose one -->
 	<script src="https://unpkg.com/feather-icons"></script>
+    <script src="js/tableToExcel.js"></script> <!-- Script para generar reporte de excel de los productos agotados -->
 	<script>
 		feather.replace()
 	</script>
