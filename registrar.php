@@ -32,7 +32,7 @@ $usuario = $_SESSION['usuario'];
 		
 		<div class="navbar-nav">
 			<div class="nav-item text-nowrap">
-				<a class="nav-link px-3" href="#"><i data-feather="user"></i><?php echo $usuario; ?><i data-feather="log-out"></i></a>
+				<a class="nav-link px-3" href="logout.php"><i data-feather="user"></i><?php echo $usuario; ?><i data-feather="log-out"></i></a>
 			</div>
 		</div>
 	</header>
