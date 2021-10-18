@@ -72,13 +72,13 @@ $usuario = $_SESSION['usuario'];
 					</h6>
 					<ul class="nav flex-column mb-2">
 						<li class="nav-item">
-							<a class="nav-link" href="#">
+							<a class="nav-link" href="producto_agotado.php">
 								<span data-feather="trash-2"></span>
 								Productos Agotados
 							</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="#">
+							<a class="nav-link" href="producto_caducado.php">
 								<span data-feather="calendar"></span>
 								Productos Vencidos
 							</a>

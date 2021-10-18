@@ -85,7 +85,7 @@ $usuario = $_SESSION['usuario'];
 							</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="#">
+							<a class="nav-link" href="producto_caducado.php">
 								<span data-feather="calendar"></span>
 								Productos Vencidos
 							</a>

@@ -11,8 +11,9 @@ $usuario = $_SESSION['usuario'];
 
 <?php
 	include "conexion.php";
+	$hoy = getdate();
     $mysqli = conectar();
-    $sql = "SELECT id, descripcion, precio, cantidad, fregistro, fcaducidad FROM productos where cantidad < 1";   // se modifico el query para poder visualizar una tabla para los productos agotados 
+    $sql = "SELECT id, descripcion, precio, cantidad, fregistro, fcaducidad FROM productos where fcaducidad < current_date() ";   // se modifico el query para poder visualizar una tabla para los productos agotados 
     $resultado = mysqli_query($mysqli, $sql);
 ?>
 
@@ -22,7 +23,7 @@ $usuario = $_SESSION['usuario'];
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="">
-	<title>Sistema de Inventario / Producto agotado</title>
+	<title>Sistema de Inventario / Producto caducado</title>
 	<!-- CSS only -->
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 	<!-- JavaScript Bundle with Popper -->
