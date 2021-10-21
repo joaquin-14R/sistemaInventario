@@ -37,5 +37,21 @@ function borrar(){
 	formulario.innerHTML="";
 }
 
+function eliminar(datos){
+
+	d=datos.split('||');
+	id=d[0];
+	$.ajax({
+		type:"POST",
+		url:"./borrar.php",
+		data:"id=" + id,
+		success:function(r){
+			$('#mensaje').html(r);
+			$('#tabla').load('./actualizar.php #tabla');
+		}
+	});
+}
+
+
 
 

@@ -1,7 +1,7 @@
 <?php
-	$mysqli = new mysqli("174.136.25.249", "geoconst_joaquin", "##joaquin##2021", "geoconst_sInventario");
+	$mysqli = new mysqli("65.99.252.142", "geoconst_joaquin", "##joaquin##2021", "geoconst_sInventario");
 	function conectar(){
-		$servidor = "174.136.25.249";
+		$servidor = "65.99.252.142";
 		$usuario = "geoconst_joaquin";
 		$password = "##joaquin##2021";
 		$db = "geoconst_sInventario";
